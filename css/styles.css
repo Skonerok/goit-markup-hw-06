@@ -8,7 +8,9 @@
   --background-color: #2f303a;
   --secondary-background-color: #f5f4fa;
   --main-background-color: #ffffff;
+  --btn-hover-color: #188CE8;
   --icons-fill: #AFB1B8;
+  --animation-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* GLOBAL RESET STYLES */
@@ -198,7 +200,7 @@ margin-right: auto;
 
 .hero-btn:hover,
 .hero-btn:focus {
-  background-color: #188CE8;
+  background-color: var(--btn-hover-color);
 }
 
 /* BENEFITS SECTION */
@@ -485,76 +487,74 @@ background-color: var(--accent-color);
 fill: var(--secondary-color);
 }
 
-.subscribe-container {
+.subscribe-footer {
 margin-left: 93px;
 }
 
-/* .subscribe-mail {
-  display: flex;
-  gap: 12px;
-} */
-
 .subscribe-title {
+/* display: inline-block; */
 font-weight: 700;
 font-size: 14px;
 line-height: calc(16 / 14);
 letter-spacing: 0.03em;
 text-transform: uppercase;
 color: var(--secondary-color);
-margin-bottom: 20px;
+/* margin-bottom: 20px; */
 }
 
 .subscribe-form {
-  display: flex;
-  align-items: center;
+display: flex;
+align-items: center;
+margin-top: 20px;
 }
 
 .email-input {
 font-size: 16px;
-  line-height: calc(20 / 16);
-  letter-spacing: 0.03em;
-  color: rgba(255, 255, 255, 0.6);
-border: 1px solid rgba(255, 255, 255, 0.3);
-border-radius: 4px;
-padding: 0;
+line-height: calc(20 / 16);
+letter-spacing: 0.03em;
+color: rgba(255, 255, 255, 0.6);
 padding-left: 16px;
 width: 358px;
 height: 50px;
 background-color: inherit;
+border: 1px solid rgba(255, 255, 255, 0.3);
+border-radius: 4px;
+transition: background-color 250ms var(--animation-function), box-shadow 250ms var(--animation-function);
 }
 
 .email-input:hover,
 .email-input:focus-within {
 border: 1px solid rgba(33, 150, 243, 0.3);
-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 .submit-btn {
-  /* position: relative; */
+  position: relative;
   font-weight: 700;
     font-size: 16px;
     line-height: calc(30 / 16);
     letter-spacing: 0.06em;
-  display: flex;
-    align-items: center;
-    text-align: center;
     padding: 10px 62px 10px 28px;
     margin-left: 12px;
     color: var(--secondary-color);
     background-color: var(--accent-color);
     border-radius: 4px;
     border: none;
+    transition: background-color 250ms var(--animation-function), box-shadow 250ms var(--animation-function);
 }
 
 .submit-btn:hover,
 .submit-btn:focus {
-  /* background-color: ; */
-  box-shadow:(0px 4px 4px rgba(0, 0, 0, 0.15));
+  background-color: var(--btn-hover-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 .send-icon {
-  /* position: absolute; */
+position: absolute;
+top: 13px;
+right: 28px;
 margin-left: 10px;
+/* fill: var(--secondary-color); */
 }
 
 /* MODAL WINDOW */
@@ -608,6 +608,14 @@ border-radius: 50%;
 border: 1px solid rgba(0, 0, 0, 0.1);
 cursor: pointer;
 }
+
+/* MODAL FORMS */
+.form-group {
+  display: flex;
+  flex-direction: column;
+
+}
+
 
 /* ===== PORTFOLIO PAGE =====*/
 
